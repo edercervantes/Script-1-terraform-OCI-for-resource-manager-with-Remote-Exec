@@ -27,19 +27,6 @@ resource "null_resource" "remote-exec" {
     source      = "./first_round_scripts"
     destination = "~/tmp"
     }
-
-#DO NOT NEED
-/*     provisioner "file" {
-        connection{
-            agent           = false
-            timeout         = "1m"
-            host            = "${oci_core_instance.developer_instance.public_ip}"
-            user            = "opc"
-            private_key     = "${file("${var.ssh_private_key}")}"
-        }
-    source      = "./credentials"
-    destination = "~/tmp"
-    } */
     
     provisioner "remote-exec" {
     connection {

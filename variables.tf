@@ -15,7 +15,7 @@ variable ssh_public_key {
 }
 
 variable ssh_private_key {
-  default = "./ssh_keys/id_rsa"
+  default = "./ssh_keys/<ssh_key_name>"
 }
 
 ########################DATABASE########################
@@ -52,16 +52,6 @@ data "oci_identity_availability_domain" "ad" {
 variable "obj_store_namespace"{
   default = ""
 }
-/* DO NOT NEED ANYMORE
-variable "credit_scoring_content"{
-  type = "string"
-  default = "~/Downloads/lab-resources/credit_scoring_100k_pq" #to make empty later
-}
-
-variable "expdp_alpha_content"{
-  type = "string"
-  default = "~/Downloads/lab-resources/expdp_alpha.dmp"
-} */
 
 ########################GOVERNANCE########################
 variable "region" {}
